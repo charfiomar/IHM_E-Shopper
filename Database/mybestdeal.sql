@@ -193,12 +193,9 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`idUsr`, `loginUsr`, `mdpsUsr`, `mailUsr`) VALUES
-(1, 'omarcharfi', 'Omar180794', 'omar.charfi@iit.ens.tn'),
-(2, 'charfiomar85', 'Omar180794', 'omarcharfi85@gmail.com'),
 (3, 'HajjejMaha', 'Mitcha52', 'maha.hajjej@iit.ens.tn'),
 (4, 'Anonymous12', '147258', 'myMail@yahoo.fr'),
 (5, 'oommoo', 'Omar1111', 'oo@ii.aa'),
-(6, 'Hamouda', 'katout1', 'hamouda125.fh@gmail.com'),
 (7, 'Maha', 'Mitcha52', 'mahahajjej4@gmail.com');
 
 -- --------------------------------------------------------
