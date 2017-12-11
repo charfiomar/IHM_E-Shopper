@@ -12,6 +12,7 @@ unset($password);
 if(isset($conn->idUsr)){
     session_start();
     $_SESSION['username']=$username;
+    $_SESSION['usrId']=$conn->idUsr;
     header('location: ../Views/Welcome.php');
 }
 else

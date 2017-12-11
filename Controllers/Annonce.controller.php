@@ -1,5 +1,6 @@
 <?php
 include "Models/Annonce.class.php";
+include "Models/Photo.class.php";
 
 $idAnn="";
 $titreAnn="";
@@ -47,7 +48,10 @@ switch ($action){
         include "Views/Annonce/MesAnnonces.php";
         break;
     case 'add':
-
         include "Views/Annonce/AddAnnonce.php";
+        break;
+    case 'addAd':
+        include "Includes/uploadAd";
+        print_r($_FILES);
         break;
 }

@@ -17,6 +17,8 @@ if(!isset($_SESSION['username']))
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/galleryUpload.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -112,37 +114,26 @@ if(!isset($_SESSION['username']))
             <div class="col-sm-9 padding-right">
                 <div class="login-form"><!--Add ad form-->
                     <h2>New AD !</h2>
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                    <form action="Includes/register.php" method="post" style="margin-bottom: 10%">
-                        <input type="text" placeholder="Title" required/>
-                        <select style="margin-bottom: 10px;height: 35px;">
-                            <option>Category</option>
+                    <form action="index.php?controller=Annonce&action=addAd" method="post" style="margin-bottom: 10%">
+                        <input type="text" placeholder="Title" name="titreAnn" required/>
+                        <select style="margin-bottom: 10px;height: 35px;" name="idCat">
+                            <?php      $res = $bdd->query("SELECT * FROM categorie ORDER BY nomCat")->fetchAll(PDO::FETCH_OBJ);
+                            foreach($res as $cat):
+                            ?>
+                            <option value="<?=$cat->idCat?>" ><?=$cat->nomCat?></option>
+                            <?php endforeach;?>
                         </select>
-                        <textarea style="margin-bottom: 10px;height: 200px;" placeholder="Description"></textarea>
-                        <input type="number" placeholder="Initial Price ($)" required/>
-                        <input type="date" placeholder="Username exists" name="username" required/>
-                        <input class="add_image" type="file" placeholder="" name="file" id="fileinput" required/>
-                        <center><img id="img" src="#" style="width: 50%;height: 50%;" ></center>
-                        <script type="text/javascript">
-                            function readURL(input) {
-
-                                if (input.files && input.files[0]) {
-                                    var reader = new FileReader();
-
-                                    reader.onload = function(e) {
-                                        $('#img').attr('src', e.target.result);
-                                    }
-
-                                    reader.readAsDataURL(input.files[0]);
-                                }
-                            }
-
-                            $("#fileinput").change(function() {
-                                readURL(this);
-                            });
-                        </script>
-                        <input type="text" placeholder="" name="passwordc" id="zzzc" required/>
-                        <button type="submit" class="btn btn-default">Signup</button>
+                        <textarea style="margin-bottom: 10px;height: 200px;" placeholder="Description" name="descriptionAnn"></textarea>
+                        <input type="number" placeholder="Initial Price ($)" name="prixAnn" required/>
+                        <input type="date" title="Date d'expiration" name="dateExpAnn" required/>
+                        <input class="add_image" type="file" name="fileToUpload" id="gallery-photo-add" required/>
+                        <div class="gallery"></div>
+                        <select style="margin-bottom: 10px;height: 35px;" title="Etat" name="etatAnn">
+                            <option value="Neuf">Neuf</option>
+                            <option value="Occasion">Occasion</option>
+                        </select>
+                        <input type="hidden" value="<?php echo $_SESSION['usrId']; ?>" name="idUsr">
+                        <button type="submit" name="submit" class="btn btn-default">Signup</button>
                     </form>
                 </div><!--/Add ad form-->
             </div>

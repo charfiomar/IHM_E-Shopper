@@ -19,7 +19,7 @@ class Annonce
     }
 
     public function add_Annonce($bdd){
-    $bdd->exec("INSERT INTO annonce(titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat) VALUES('$this->titreAnn','$this->prixAnn','$this->descriptionAnn','$this->dateCreAnn','$this->dateExpAnn','$this->etatAnn','$this->idUsr','$this->idCat') ");
+    $bdd->exec("INSERT INTO annonce(titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat) VALUES('$this->titreAnn',$this->prixAnn,'$this->descriptionAnn',CURRENT_DATE ,'$this->dateExpAnn','$this->etatAnn',$this->idUsr,$this->idCat) ");
     }
 
     public function list_Annonce($bdd){
