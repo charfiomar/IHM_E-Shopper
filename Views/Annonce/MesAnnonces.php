@@ -133,17 +133,17 @@ if(!isset($_SESSION['username']))
                     <h2 class="title text-center">My Ads</h2>
                     <?php if(count($res)!=0):
                         foreach($res as $annonce):
-                        $pho = $bdd->query("SELECT nomPh,extensionPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
+                        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
                     <div class="col-sm-4"><!--One_item-->
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="images/annonces/<?=$pho->nomPh;?><?php echo'.';?><?=$pho->extensionPh;?>" title="<?=$pho->descPh;?>" />
+                                    <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
                                     <h2>$<?=$annonce->prixAnn?></h2>
                                     <p><?=$annonce->titreAnn?></p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
                                 </div>
-                                <div class="product-overlay">
+                                <div class="product-overlay" title="<?=$pho->descPh;?>">
                                     <div class="overlay-content">
                                         <h2>$<?=$annonce->prixAnn?></h2>
                                         <p><?=$annonce->titreAnn?></p>

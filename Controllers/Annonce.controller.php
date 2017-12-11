@@ -51,7 +51,7 @@ switch ($action){
         include "Views/Annonce/AddAnnonce.php";
         break;
     case 'addAd':
-        include "Includes/uploadAd";
-        print_r($_FILES);
+        include "Includes/uploadAd.php";
+        header('location:index.php?controller=Annonce&action=list');
         break;
 }

@@ -9,27 +9,26 @@ class Photo
     public function __construct($idPh,$nomPh,$extensionPh,$descPh,$idAnn){
         $this->idPh = $idPh;
         $this->nomPh = $nomPh;
-        $this->extensionPh = $extensionPh;
         $this->descPh = $descPh;
         $this->idAnn = $idAnn;
     }
 
     public function add_Photo($bdd){
-        $bdd->exec("INSERT INTO photo(nomPh,extensionPh,descPh,idAnn) VALUES('$this->nomPh','$this->extensionPh','$this->descPh','$this->idAnn') ");
+        $bdd->exec("INSERT INTO photo(nomPh,descPh,idAnn) VALUES('$this->nomPh','$this->descPh','$this->idAnn') ");
     }
 
     public function list_Photo($bdd){
-        $res = $bdd->query("SELECT nomPh,extensionPh,descPh,idAnn FROM photo")->fetchAll(PDO::FETCH_OBJ);
+        $res = $bdd->query("SELECT nomPh,descPh,idAnn FROM photo")->fetchAll(PDO::FETCH_OBJ);
         return $res;
     }
 
     public function list1_Photo($bdd){
-        $res = $bdd->query("SELECT nomPh,extensionPh,descPh,idAnn FROM photo WHERE idPh ='$this->idPh' ")->fetch(PDO::FETCH_OBJ);
+        $res = $bdd->query("SELECT nomPh,descPh,idAnn FROM photo WHERE idPh ='$this->idPh' ")->fetch(PDO::FETCH_OBJ);
         return $res;
     }
 
     public function update_Photo($bdd){
-        $bdd->exec("UPDATE photo SET nomPh = '$this->nomPh', extensionPh = '$this->extensionPh', descPh = '$this->descPh', idAnn = '$this->idAnn' WHERE idPh ='$this->idPh' ");
+        $bdd->exec("UPDATE photo SET nomPh = '$this->nomPh', descPh = '$this->descPh', idAnn = '$this->idAnn' WHERE idPh ='$this->idPh' ");
 
     }
 

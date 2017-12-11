@@ -114,7 +114,7 @@ if(!isset($_SESSION['username']))
             <div class="col-sm-9 padding-right">
                 <div class="login-form"><!--Add ad form-->
                     <h2>New AD !</h2>
-                    <form action="index.php?controller=Annonce&action=addAd" method="post" style="margin-bottom: 10%">
+                    <form action="index.php?controller=Annonce&action=addAd" method="post" style="margin-bottom: 10%" enctype="multipart/form-data">
                         <input type="text" placeholder="Title" name="titreAnn" required/>
                         <select style="margin-bottom: 10px;height: 35px;" name="idCat">
                             <?php      $res = $bdd->query("SELECT * FROM categorie ORDER BY nomCat")->fetchAll(PDO::FETCH_OBJ);
