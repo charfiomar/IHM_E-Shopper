@@ -28,7 +28,7 @@ class Annonce
     }
 
     public function listUsr_Annonce($bdd,$usr){
-    $res = $bdd->query("SELECT idAnn,titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat FROM annonce WHERE idUsr=(Select idUsr from utilisateur where loginUsr = '$usr') ")->fetchAll(PDO::FETCH_OBJ);
+    $res = $bdd->query("SELECT idAnn,titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat FROM annonce WHERE idUsr=$usr ")->fetchAll(PDO::FETCH_OBJ);
     return $res;
     }
 

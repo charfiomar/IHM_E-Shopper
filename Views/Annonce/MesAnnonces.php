@@ -115,13 +115,9 @@ if(!isset($_SESSION['username']))
                     <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="index.php?controller=Annonce&action=add">Create Ad</a></h4>
-                                </div>
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Edit Ad</a></h4>
-                                </div>
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><a href="#">Delete Ad</a></h4>
+                                    <a href="index.php?controller=Annonce&action=add"><button class="btn-group-justified">Create AD</button></a><br>
+                                    <a href="index.php?controller=Annonce&action=add"><button class="btn-group-justified">Edit AD</button></a><br>
+                                    <a href="index.php?controller=Annonce&action=add"><button class="btn-group-justified">Delete AD</button></a>
                                 </div>
                             </div>
                     </div><!--/category-productsr-->

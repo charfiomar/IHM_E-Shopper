@@ -130,31 +130,64 @@ if(!isset($_SESSION['username']))
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
-                    <div class="col-sm-4"><!--One_item-->
+                    <?php
+                    foreach($fav_ads as $annonce):
+                    $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
+                    <div class="col-sm-4"><!--One_fav_item-->
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-                                    <img src="images/shop/product12.jpg" alt="" />
-                                    <h2>$56</h2>
-                                    <p>Easy Polo Black Edition</p>
+                                    <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
+                                    <h2>$<?=$annonce->prixAnn?></h2>
+                                    <p><?=$annonce->titreAnn?></p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
                                 </div>
-                                <div class="product-overlay">
+                                <div class="product-overlay" title="<?=$pho->descPh;?>">
                                     <div class="overlay-content">
-                                        <h2>$56</h2>
-                                        <p>Easy Polo Black Edition</p>
+                                        <h2>$<?=$annonce->prixAnn?></h2>
+                                        <p><?=$annonce->titreAnn?></p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
-                                    <li><a>Add to wishlist</a></li>
-                                    <li><a>Add to compare</a></li>
+                                    <li><a>Edit Ad</a></li>
+                                    <li><a>Delete Ad</a></li>
                                 </ul>
                             </div>
                         </div>
-                    </div><!--/One_item-->
+                    </div><!--/One_fav_item-->
+                    <?php endforeach; ?>
+                    <?php
+                    foreach($a as $annonce):
+                        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
+                        <div class="col-sm-4"><!--One_item-->
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
+                                        <h2>$<?=$annonce->prixAnn?></h2>
+                                        <p><?=$annonce->titreAnn?></p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
+                                    </div>
+                                    <div class="product-overlay" title="<?=$pho->descPh;?>">
+                                        <div class="overlay-content">
+                                            <h2>$<?=$annonce->prixAnn?></h2>
+                                            <p><?=$annonce->titreAnn?></p>
+                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="choose">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li><a>Edit Ad</a></li>
+                                        <li><a>Delete Ad</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!--/One_item-->
+                    <?php endforeach; ?>
 
                 </div><!--/features_items-->
             </div>

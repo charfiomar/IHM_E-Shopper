@@ -44,7 +44,7 @@ $A = new Annonce($idAnn,$titreAnn,$prixAnn,$descriptionAnn,$dateCreAnn,$dateExpA
 
 switch ($action){
     case 'list':
-        $res = $A->listUsr_Annonce($bdd,$_SESSION['username']);
+        $res = $A->listUsr_Annonce($bdd,$_SESSION['usrId']);
         include "Views/Annonce/MesAnnonces.php";
         break;
     case 'add':
