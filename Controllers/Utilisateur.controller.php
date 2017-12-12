@@ -37,9 +37,14 @@ function compareArray($array1,$array2){
 switch ($action){
     case "logged":
         $id = $_SESSION['usrId'];
-        $fav_ads = $bdd->query("SELECT * FROM annonce WHERE idCat IN (SELECT idCat FROM favoris WHERE idUsr = $id)")->fetchAll(PDO::FETCH_OBJ);
-        $ads = $bdd->query("SELECT * FROM annonce")->fetchAll(PDO::FETCH_OBJ);
-        $a = compareArray($ads,$fav_ads);
+        if(!isset($_REQUEST['cat'])){
+            $fav_ads = $bdd->query("SELECT * FROM annonce WHERE idCat IN (SELECT idCat FROM favoris WHERE idUsr = $id)")->fetchAll(PDO::FETCH_OBJ);
+            $ads = $bdd->query("SELECT * FROM annonce")->fetchAll(PDO::FETCH_OBJ);
+            $a = compareArray($ads,$fav_ads);
+        }else{
+            $catego = $_REQUEST['cat'];
+            $a = $bdd->query("SELECT * FROM annonce WHERE idCat = $catego")->fetchAll(PDO::FETCH_OBJ);
+        }
         include "Views/Utilisateur/Acceuil.php";
         break;
 }

@@ -10,7 +10,10 @@ $(function() {
 
                 reader.onload = function(event) {
                     $(placeToInsertImagePreview).empty();
-                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                    html = $($.parseHTML('<img>'));
+                    html.attr('id','galImg');
+                    html.attr('src', event.target.result);
+                    html.appendTo(placeToInsertImagePreview);
                 }
 
                 reader.readAsDataURL(input.files[i]);

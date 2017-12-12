@@ -19,16 +19,17 @@ class Annonce
     }
 
     public function add_Annonce($bdd){
-    $bdd->exec("INSERT INTO annonce(titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat) VALUES('$this->titreAnn',$this->prixAnn,'$this->descriptionAnn',CURRENT_DATE ,'$this->dateExpAnn','$this->etatAnn',$this->idUsr,$this->idCat) ");
+        $unit = ($this->prixAnn)*0.1;
+        $bdd->exec("INSERT INTO annonce(titreAnn,prixAnn,unitAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat) VALUES('$this->titreAnn',$this->prixAnn,$unit,'$this->descriptionAnn',CURRENT_DATE ,'$this->dateExpAnn','$this->etatAnn',$this->idUsr,$this->idCat) ");
     }
 
     public function list_Annonce($bdd){
-    $res = $bdd->query("SELECT idAnn,titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat FROM annonce")->fetchAll(PDO::FETCH_OBJ);
+    $res = $bdd->query("SELECT * FROM annonce")->fetchAll(PDO::FETCH_OBJ);
     return $res;
     }
 
     public function listUsr_Annonce($bdd,$usr){
-    $res = $bdd->query("SELECT idAnn,titreAnn,prixAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat FROM annonce WHERE idUsr=$usr ")->fetchAll(PDO::FETCH_OBJ);
+    $res = $bdd->query("SELECT * FROM annonce WHERE idUsr=$usr ")->fetchAll(PDO::FETCH_OBJ);
     return $res;
     }
 

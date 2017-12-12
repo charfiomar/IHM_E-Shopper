@@ -111,13 +111,15 @@ if(isset($_SESSION['username']))
                         <div class="checkout-options">
                             <h3>Favourite products</h3>
                             <p>Subscribe now for your favourite categories</p>
-                            <ul class="nav">
-                                <?php foreach ($res as $cat):?>
-                                <li>
-                                    <input type="checkbox" style="width: 0.5cm;height: 0.5cm;" name="categorie[]" value="<?=$cat->idCat;?>" title="<?=$cat->desCat;?>"><?=$cat->nomCat;?>
-                                </li>
-                                <?php endforeach;?>
-                            </ul>
+                            <div class="checkbox-inline">
+                                <ul class="nav">
+                                    <?php foreach ($res as $cat):?>
+                                        <li>
+                                            <input type="checkbox" style="width: 0.5cm;height: 0.5cm;" name="categorie[]" value="<?=$cat->idCat;?>" title="<?=$cat->desCat;?>"><?=$cat->nomCat;?>
+                                        </li>
+                                    <?php endforeach;?>
+                                </ul>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-default">Signup</button>
                     </form>

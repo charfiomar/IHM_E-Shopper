@@ -133,8 +133,8 @@ if(!isset($_SESSION['username']))
                             <option value="Occasion">Occasion</option>
                         </select>
                         <input type="hidden" value="<?php echo $_SESSION['usrId']; ?>" name="idUsr">
-                        <button type="submit" name="submit" class="btn btn-default">Create Ad</button>
                         <button type="reset" class="btn btn-default">Reset</button>
+                        <button type="submit" name="submit" class="btn btn-default">Create Ad</button>
                     </form>
                 </div><!--/Add ad form-->
             </div>

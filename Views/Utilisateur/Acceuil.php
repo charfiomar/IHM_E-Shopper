@@ -118,7 +118,7 @@ if(!isset($_SESSION['username']))
                     ?>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="panel-title"><a href="#"><?=strtoupper($cat->nomCat);?></a></h4>
+                                <h4 class="panel-title"><a href="index.php?controller=Utilisateur&action=logged&cat=<?=$cat->idCat?>"><?=strtoupper($cat->nomCat);?></a></h4>
                             </div>
                         </div>
                     <?php endforeach;?>
@@ -131,8 +131,11 @@ if(!isset($_SESSION['username']))
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
                     <?php
+                    if(!isset($_REQUEST['cat'])):
                     foreach($fav_ads as $annonce):
-                    $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
+                    $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);
+                    $usrnm = $bdd->query("SELECT loginUsr FROM utilisateur WHERE idUsr =$annonce->idUsr ")->fetch(PDO::FETCH_OBJ);
+                    ?>
                     <div class="col-sm-4"><!--One_fav_item-->
                         <div class="product-image-wrapper">
                             <div class="single-products">
@@ -152,16 +155,19 @@ if(!isset($_SESSION['username']))
                             </div>
                             <div class="choose">
                                 <ul class="nav nav-pills nav-justified">
-                                    <li><a>Edit Ad</a></li>
-                                    <li><a>Delete Ad</a></li>
+                                    <li><a><?=$usrnm->loginUsr?></a></li>
+                                    <li><a><?=substr($annonce->dateExpAnn,0,10)?></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div><!--/One_fav_item-->
-                    <?php endforeach; ?>
+                    <?php endforeach;
+                    endif;?>
                     <?php
                     foreach($a as $annonce):
-                        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);?>
+                        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);
+                        $usrnm = $bdd->query("SELECT loginUsr FROM utilisateur WHERE idUsr =$annonce->idUsr ")->fetch(PDO::FETCH_OBJ);
+                        ?>
                         <div class="col-sm-4"><!--One_item-->
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -181,14 +187,13 @@ if(!isset($_SESSION['username']))
                                 </div>
                                 <div class="choose">
                                     <ul class="nav nav-pills nav-justified">
-                                        <li><a>Edit Ad</a></li>
-                                        <li><a>Delete Ad</a></li>
+                                        <li><a><?=$usrnm->loginUsr?></a></li>
+                                        <li><a><?=substr($annonce->dateExpAnn,0,10)?></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div><!--/One_item-->
                     <?php endforeach; ?>
-
                 </div><!--/features_items-->
             </div>
         </div>
