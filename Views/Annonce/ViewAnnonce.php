@@ -9,7 +9,7 @@ if(!isset($_SESSION['username']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | E-Shopper</title>
+    <title>My Ads| E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -17,6 +17,8 @@ if(!isset($_SESSION['username']))
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/galleryUpload.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -106,99 +108,80 @@ if(!isset($_SESSION['username']))
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="left-sidebar">
-                    <h2>Category</h2>
-                    <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                    <?php      $res = $bdd->query("SELECT * FROM categorie ORDER BY nomCat")->fetchAll(PDO::FETCH_OBJ);
-                               foreach($res as $cat):
-                    ?>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h4 class="panel-title"><a href="index.php?controller=Utilisateur&action=logged&cat=<?=$cat->idCat?>"><?=strtoupper($cat->nomCat);?></a></h4>
-                            </div>
-                        </div>
-                    <?php endforeach;?>
-                    </div><!--/category-productsr-->
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 padding-right">
+            <div class="product-details"><!--product-details-->
+                <div class="col-sm-5">
+                    <div class="view-product">
+                        <img src="images/annonces/<?=$pho->nomPh;?>" alt="" />
+                    </div>
                 </div>
-            </div>
+                <div class="col-sm-7">
+                    <div class="product-information"><!--/product-information-->
+                        <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+                        <h2><?=$ann->titreAnn?></h2>
+                        <p><?=$ann->descriptionAnn?></p>
+                        <span>
+									<span>US $<?=$ann->prixAnn?></span>
+									<button type="button" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										PLACE A BID
+									</button>
+								</span>
+                        <p><b>Availability:</b> <?=substr($ann->dateExpAnn,0,10)?></p>
+                        <p><b>Condition:</b> <?=$ann->etatAnn?></p>
+                        <p><b>Announcer:</b> <?=$usrnm->loginUsr?></p>
+                    </div><!--/product-information-->
+                </div>
+            </div><!--/product-details-->
 
-            <div class="col-sm-9 padding-right">
-                <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center">Features Items</h2>
-                    <?php
-                    if(!isset($_REQUEST['cat'])):
-                    foreach($fav_ads as $annonce):
-                    $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);
-                    $usrnm = $bdd->query("SELECT loginUsr FROM utilisateur WHERE idUsr =$annonce->idUsr ")->fetch(PDO::FETCH_OBJ);
-                    ?>
-                    <div class="col-sm-4"><!--One_fav_item-->
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
-                                    <h2>$<?=$annonce->prixAnn?></h2>
-                                    <p><?=$annonce->titreAnn?></p>
-                                    <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
-                                </div>
-                                <div class="product-overlay" title="<?=$pho->descPh;?>">
-                                    <div class="overlay-content">
-                                        <h2>$<?=$annonce->prixAnn?></h2>
-                                        <p><?=$annonce->titreAnn?></p>
-                                        <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="choose">
-                                <ul class="nav nav-pills nav-justified">
-                                    <li><a><?=$usrnm->loginUsr?></a></li>
-                                    <li><a><?=substr($annonce->dateExpAnn,0,10)?></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div><!--/One_fav_item-->
-                    <?php endforeach;
-                    endif;?>
-                    <?php
-                    foreach($a as $annonce):
-                        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn ='$annonce->idAnn' ")->fetch(PDO::FETCH_OBJ);
-                        $usrnm = $bdd->query("SELECT loginUsr FROM utilisateur WHERE idUsr =$annonce->idUsr ")->fetch(PDO::FETCH_OBJ);
-                        ?>
-                        <div class="col-sm-4"><!--One_item-->
-                            <div class="product-image-wrapper">
-                                <div class="single-products">
-                                    <div class="productinfo text-center">
-                                        <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
-                                        <h2>$<?=$annonce->prixAnn?></h2>
-                                        <p><?=$annonce->titreAnn?></p>
-                                        <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
-                                    </div>
-                                    <div class="product-overlay" title="<?=$pho->descPh;?>">
-                                        <div class="overlay-content">
-                                            <h2>$<?=$annonce->prixAnn?></h2>
-                                            <p><?=$annonce->titreAnn?></p>
-                                            <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
+            <div class="recommended_items"><!--recommended_items-->
+                <h2 class="title text-center">recommended items</h2>
+
+                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="images/home/recommend1.jpg" alt="" />
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="choose">
-                                    <ul class="nav nav-pills nav-justified">
-                                        <li><a><?=$usrnm->loginUsr?></a></li>
-                                        <li><a><?=substr($annonce->dateExpAnn,0,10)?></a></li>
-                                    </ul>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <img src="images/home/recommend3.jpg" alt="" />
+                                            <h2>$56</h2>
+                                            <p>Easy Polo Black Edition</p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div><!--/One_item-->
-                    <?php endforeach; ?>
-                </div><!--/features_items-->
-            </div>
+                        </div>
+                    </div>
+                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+            </div><!--/recommended_items-->
+
         </div>
     </div>
-</section>
+</div>
 
 <footer id="footer"><!--Footer-->
 

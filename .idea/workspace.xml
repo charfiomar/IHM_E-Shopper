@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e4bddd5-1d83-4d18-8017-6bacbba161a4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/Utilisateur.controller.php" afterPath="$PROJECT_DIR$/Controllers/Utilisateur.controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Models/Annonce.class.php" afterPath="$PROJECT_DIR$/Models/Annonce.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Annonce/AddAnnonce.php" afterPath="$PROJECT_DIR$/Views/Annonce/AddAnnonce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Register.php" afterPath="$PROJECT_DIR$/Views/Register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controllers/Annonce.controller.php" afterPath="$PROJECT_DIR$/Controllers/Annonce.controller.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" afterPath="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/galleryUpload.js" afterPath="$PROJECT_DIR$/js/galleryUpload.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,12 +16,71 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="234">
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Acceuil.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Views/Utilisateur/Acceuil.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="190" column="85" lean-forward="false" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="85" />
+              <folding>
+                <marker date="1513125510637" expanded="true" signature="5095:5134" ph="SELECT * FRO... categorie" />
+                <marker date="1513125510637" expanded="true" signature="6084:6145" ph="SELECT nomPh... photo" />
+                <marker date="1513125510637" expanded="true" signature="6215:6261" ph="SELECT login... utilisateur" />
+                <marker date="1513125510637" expanded="true" signature="8299:8360" ph="SELECT nomPh... photo" />
+                <marker date="1513125510637" expanded="true" signature="8434:8480" ph="SELECT login... utilisateur" />
+                <marker date="1513125510637" expanded="true" signature="8434:8495" ph="SELECT nomPh... photo" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewAnnonce.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Annonce.controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/Annonce.controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="179">
+              <caret line="42" column="91" lean-forward="true" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="91" />
+              <folding>
+                <marker date="1513125845355" expanded="true" signature="1437:1473" ph="SELECT * FRO... annonce" />
+                <marker date="1513125845355" expanded="true" signature="1437:1474" ph="SELECT * FRO... annonce" />
+                <marker date="1513125845355" expanded="true" signature="1533:1577" ph="SELECT nomPh... photo" />
+                <marker date="1513125845355" expanded="true" signature="1640:1686" ph="SELECT login... utilisateur" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Annonce.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Models/Annonce.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="48" />
+              <folding>
+                <marker date="1513124878499" expanded="true" signature="689:939" ph="INSERT INTO annonce... " />
+                <marker date="1513124878499" expanded="true" signature="1015:1036" ph="SELECT titre... annonce" />
+                <marker date="1513124878499" expanded="true" signature="1162:1196" ph="SELECT titre... annonce" />
+                <marker date="1513124878499" expanded="true" signature="1162:1197" ph="SELECT idAnn... annonce" />
+                <marker date="1513124878499" expanded="true" signature="1313:1602" ph="UPDATE annon... " />
+                <marker date="1513124878499" expanded="true" signature="1672:1719" ph="DELETE FROM " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,6 +106,7 @@
       <find>sea</find>
       <find>file_u</find>
       <find>col-sm-4</find>
+      <find>view-pr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,18 +149,19 @@
         <option value="$PROJECT_DIR$/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/css/responsive.css" />
         <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/Controllers/Annonce.controller.php" />
         <option value="$PROJECT_DIR$/Includes/logout.php" />
         <option value="$PROJECT_DIR$/Models/Utilisateur.class.php" />
         <option value="$PROJECT_DIR$/Views/Annonce/MesAnnonces.php" />
         <option value="$PROJECT_DIR$/Views/Register.php" />
         <option value="$USER_HOME$/Eshopper/index.html" />
-        <option value="$PROJECT_DIR$/Models/Annonce.class.php" />
         <option value="$PROJECT_DIR$/Controllers/Utilisateur.controller.php" />
-        <option value="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" />
         <option value="$PROJECT_DIR$/js/formReset.js" />
         <option value="$PROJECT_DIR$/Views/Annonce/AddAnnonce.php" />
         <option value="$PROJECT_DIR$/js/galleryUpload.js" />
+        <option value="$PROJECT_DIR$/Models/Annonce.class.php" />
+        <option value="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" />
+        <option value="$PROJECT_DIR$/Controllers/Annonce.controller.php" />
+        <option value="$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php" />
       </list>
     </option>
   </component>
@@ -156,7 +214,23 @@
             <path>
               <item name="EShopper" type="b2602c69:ProjectViewProjectNode" />
               <item name="EShopper" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EShopper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EShopper" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Models" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EShopper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EShopper" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="EShopper" type="b2602c69:ProjectViewProjectNode" />
+              <item name="EShopper" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Utilisateur" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -168,7 +242,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Eshopper/index.html" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Eshopper/product-details.html" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -229,12 +303,12 @@
       <workItem from="1512998744500" duration="7936000" />
       <workItem from="1513030192157" duration="5926000" />
       <workItem from="1513073967525" duration="2316000" />
-      <workItem from="1513103668367" duration="11340000" />
+      <workItem from="1513103668367" duration="15666000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101312000" />
+    <option name="totallyTimeSpent" value="105638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="106" y="-4" width="1368" height="780" extended-state="6" />
@@ -273,13 +347,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Models/Lieu.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="68" lean-forward="true" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Models/Favoris.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -291,13 +358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Eshopper/product-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -525,16 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Annonce/MesAnnonces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-720">
-          <caret line="118" column="146" lean-forward="false" selection-start-line="118" selection-start-column="146" selection-end-line="118" selection-end-column="146" />
-          <folding>
-            <marker date="1513106147399" expanded="true" signature="6095:6156" ph="SELECT nomPh... photo" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Eshopper/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2628">
@@ -564,21 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Models/Annonce.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <marker date="1513117045035" expanded="true" signature="689:939" ph="INSERT INTO annonce... " />
-            <marker date="1513117045035" expanded="true" signature="1015:1036" ph="SELECT titre... annonce" />
-            <marker date="1513117045035" expanded="true" signature="1162:1196" ph="SELECT titre... annonce" />
-            <marker date="1513117045035" expanded="true" signature="1162:1197" ph="SELECT idAnn... annonce" />
-            <marker date="1513117045035" expanded="true" signature="1313:1602" ph="UPDATE annon... " />
-            <marker date="1513117045035" expanded="true" signature="1672:1719" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/formReset.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -595,17 +630,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/Annonce.controller.php">
+    <entry file="file://$PROJECT_DIR$/Views/Annonce/MesAnnonces.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="18">
+          <caret line="118" column="146" lean-forward="false" selection-start-line="118" selection-start-column="146" selection-end-line="118" selection-end-column="146" />
+          <folding>
+            <marker date="1513106147399" expanded="true" signature="6095:6156" ph="SELECT nomPh... photo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Annonce/AddAnnonce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="116" column="91" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="166" selection-end-column="7" />
+          <folding>
+            <marker date="1513121347874" expanded="true" signature="5521:5560" ph="SELECT * FRO... categorie" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Eshopper/product-details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2556">
+          <caret line="288" column="16" lean-forward="true" selection-start-line="288" selection-start-column="16" selection-end-line="631" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Controllers/Utilisateur.controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
+        <state relative-caret-position="417">
           <caret line="45" column="14" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
           <folding>
             <marker date="1513118530738" expanded="true" signature="925:1007" ph="SELECT * FRO... annonce" />
@@ -617,36 +680,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Views/Annonce/AddAnnonce.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="116" column="91" lean-forward="false" selection-start-line="116" selection-start-column="91" selection-end-line="116" selection-end-column="91" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1513121347874" expanded="true" signature="5521:5560" ph="SELECT * FRO... categorie" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Views/Utilisateur/Acceuil.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="120" column="111" lean-forward="false" selection-start-line="120" selection-start-column="111" selection-end-line="120" selection-end-column="111" />
+        <state relative-caret-position="306">
+          <caret line="190" column="85" lean-forward="false" selection-start-line="190" selection-start-column="47" selection-end-line="190" selection-end-column="85" />
           <folding>
-            <marker date="1513118773955" expanded="true" signature="5095:5134" ph="SELECT * FRO... categorie" />
-            <marker date="1513118773955" expanded="true" signature="6084:6145" ph="SELECT nomPh... photo" />
-            <marker date="1513118773955" expanded="true" signature="6215:6261" ph="SELECT login... utilisateur" />
-            <marker date="1513118773955" expanded="true" signature="8167:8228" ph="SELECT nomPh... photo" />
-            <marker date="1513118773955" expanded="true" signature="8302:8348" ph="SELECT login... utilisateur" />
-            <marker date="1513118773955" expanded="true" signature="8302:8363" ph="SELECT nomPh... photo" />
+            <marker date="1513125510637" expanded="true" signature="5095:5134" ph="SELECT * FRO... categorie" />
+            <marker date="1513125510637" expanded="true" signature="6084:6145" ph="SELECT nomPh... photo" />
+            <marker date="1513125510637" expanded="true" signature="6215:6261" ph="SELECT login... utilisateur" />
+            <marker date="1513125510637" expanded="true" signature="8299:8360" ph="SELECT nomPh... photo" />
+            <marker date="1513125510637" expanded="true" signature="8434:8480" ph="SELECT login... utilisateur" />
+            <marker date="1513125510637" expanded="true" signature="8434:8495" ph="SELECT nomPh... photo" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/Models/Annonce.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="288">
+          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <marker date="1513124878499" expanded="true" signature="689:939" ph="INSERT INTO annonce... " />
+            <marker date="1513124878499" expanded="true" signature="1015:1036" ph="SELECT titre... annonce" />
+            <marker date="1513124878499" expanded="true" signature="1162:1196" ph="SELECT titre... annonce" />
+            <marker date="1513124878499" expanded="true" signature="1162:1197" ph="SELECT idAnn... annonce" />
+            <marker date="1513124878499" expanded="true" signature="1313:1602" ph="UPDATE annon... " />
+            <marker date="1513124878499" expanded="true" signature="1672:1719" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/Annonce.controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="42" column="91" lean-forward="true" selection-start-line="42" selection-start-column="84" selection-end-line="42" selection-end-column="91" />
+          <folding>
+            <marker date="1513125845355" expanded="true" signature="1437:1473" ph="SELECT * FRO... annonce" />
+            <marker date="1513125845355" expanded="true" signature="1437:1474" ph="SELECT * FRO... annonce" />
+            <marker date="1513125845355" expanded="true" signature="1533:1577" ph="SELECT nomPh... photo" />
+            <marker date="1513125845355" expanded="true" signature="1640:1686" ph="SELECT login... utilisateur" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="138" column="61" lean-forward="false" selection-start-line="138" selection-start-column="61" selection-end-line="138" selection-end-column="61" />
           <folding />
         </state>
       </provider>
