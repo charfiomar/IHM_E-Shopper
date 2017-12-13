@@ -129,8 +129,8 @@ if(!isset($_SESSION['username']))
                         <input class="add_image" type="file" name="fileToUpload" id="gallery-photo-add" required/>
                         <div class="gallery"></div>
                         <select style="margin-bottom: 10px;height: 35px;" title="Etat" name="etatAnn">
-                            <option value="Neuf">Neuf</option>
-                            <option value="Occasion">Occasion</option>
+                            <option value="New">New</option>
+                            <option value="Used">Used</option>
                         </select>
                         <input type="hidden" value="<?php echo $_SESSION['usrId']; ?>" name="idUsr">
                         <button type="reset" class="btn btn-default">Reset</button>

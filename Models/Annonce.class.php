@@ -19,7 +19,7 @@ class Annonce
     }
 
     public function add_Annonce($bdd){
-        $unit = ($this->prixAnn)*0.1;
+        $unit = ($this->prixAnn)*0.05;
         $bdd->exec("INSERT INTO annonce(titreAnn,prixAnn,unitAnn,descriptionAnn,dateCreAnn,dateExpAnn,etatAnn,idUsr,idCat) VALUES('$this->titreAnn',$this->prixAnn,$unit,'$this->descriptionAnn',CURRENT_DATE ,'$this->dateExpAnn','$this->etatAnn',$this->idUsr,$this->idCat) ");
     }
 

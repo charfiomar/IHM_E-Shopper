@@ -9,7 +9,7 @@ if(!isset($_SESSION['username']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>My Ads| E-Shopper</title>
+    <title><?=$ann->titreAnn?> | E-Shopper</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/prettyPhoto.css" rel="stylesheet">
@@ -112,28 +112,72 @@ if(!isset($_SESSION['username']))
     <div class="row">
         <div class="col-sm-9 padding-right">
             <div class="product-details"><!--product-details-->
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <div class="view-product">
                         <img src="images/annonces/<?=$pho->nomPh;?>" alt="" />
                     </div>
                 </div>
-                <div class="col-sm-7">
+                <?php if (!isset($_REQUEST['bid']) || ($_SESSION['usrId']==$ann->idUsr)):?>
+                <div class="col-sm-6"><!--NOT BIDDER-->
                     <div class="product-information"><!--/product-information-->
                         <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                         <h2><?=$ann->titreAnn?></h2>
                         <p><?=$ann->descriptionAnn?></p>
                         <span>
+                                    <span style="font-size: small">Current BID :</span>
 									<span>US $<?=$ann->prixAnn?></span>
-									<button type="button" class="btn btn-fefault cart">
+									<?php if($_SESSION['usrId']==$ann->idUsr):?>
+                                    <button type="button" class="btn btn-fefault cart btn-group-justified" disabled>
 										<i class="fa fa-shopping-cart"></i>
 										PLACE A BID
+									</button>
+                                    <?php else:?>
+                                    <a href="index.php?controller=Annonce&action=consult&id=<?=$ann->idAnn?>&bid=true">
+                                        <button type="button" class="btn btn-fefault cart btn-group-justified">
+										<i class="fa fa-shopping-cart"></i>
+										PLACE A BID
+                                        </button>
+                                    </a>
+                                    <?php endif;?>
+                                    <button type="button" class="btn btn-fefault cart btn-group-justified">
+										<i class="fa fa-shopping-cart"></i>
+										VIEW BIDS HISTORY
 									</button>
 								</span>
                         <p><b>Availability:</b> <?=substr($ann->dateExpAnn,0,10)?></p>
                         <p><b>Condition:</b> <?=$ann->etatAnn?></p>
                         <p><b>Announcer:</b> <?=$usrnm->loginUsr?></p>
                     </div><!--/product-information-->
-                </div>
+                </div><!--/NOT BIDDER-->
+                <?php endif;?>
+                <?php if (isset($_REQUEST['bid']) && $_SESSION['usrId']!=$ann->idUsr):?>
+                <div class="col-sm-6"><!--BIDDER-->
+                    <div class="product-information"><!--/product-information-->
+                        <img src="images/product-details/bid.png" class="newarrival" alt="" />
+                        <h2><?=$ann->titreAnn?></h2>
+                        <p><?=$ann->descriptionAnn?></p>
+                        <span>
+							<span style="font-size: small">Current BID :</span>
+                            <span>US $<?=$ann->prixAnn?></span>
+                            <span style="font-size: medium;color: #595959">Min. bid amount : $<?=$ann->unitAnn?> (5% of initial price)</span>
+                                <span style="font-size: xx-large">Your BID : $<input type="number" value="<?=$ann->unitAnn+$ann->prixAnn?>" min="<?=$ann->unitAnn+$ann->prixAnn?>" style="width: 25%;height: 80%"></span>
+                                <a href="index.php?controller=Annonce&action=consult&id=<?=$ann->idAnn?>&bid=true">
+                                        <button type="button" class="btn btn-fefault cart btn-group-justified">
+										<i class="fa fa-shopping-cart"></i>
+										BID
+                                        </button>
+                                    </a>
+                            <button type="button" class="btn btn-fefault cart btn-group-justified">
+										<i class="fa fa-shopping-cart"></i>
+										VIEW BIDS HISTORY
+									</button>
+								</span>
+                        <p><b>Availability:</b> <?=substr($ann->dateExpAnn,0,10)?></p>
+                        <p><b>Condition:</b> <?=$ann->etatAnn?></p>
+                        <p><b>Announcer:</b> <?=$usrnm->loginUsr?></p>
+                    </div><!--/product-information-->
+                </div><!--/BIDDER-->
+                <?php endif;?>
             </div><!--/product-details-->
 
             <div class="recommended_items"><!--recommended_items-->
@@ -154,9 +198,9 @@ if(!isset($_SESSION['username']))
                                             <img src="images/annonces/<?=$phot->nomPh;?>" alt="" style="height: 150px;"/>
                                             <h2>$<?=$a->prixAnn?></h2>
                                             <p><?=$a->titreAnn?></p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
+                                            <a href="index.php?controller=Annonce&action=consult&id=<?=$a->idAnn?>"><button type="button" class="btn btn-default add-to-cart"><i
                                                 class="fa fa-shopping-cart"></i>See details
-                                            </button>
+                                                </button></a>
                                         </div>
                                     </div>
                                 </div>
@@ -179,9 +223,9 @@ if(!isset($_SESSION['username']))
                                             <img src="images/annonces/<?=$phot->nomPh;?>" alt=""/>
                                             <h2>$<?=$a->prixAnn?></h2>
                                             <p><?=$a->titreAnn?></p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i
+                                            <a href="index.php?controller=Annonce&action=consult&id=<?=$a->idAnn?>"><button type="button" class="btn btn-default add-to-cart"><i
                                                 class="fa fa-shopping-cart"></i>See details
-                                            </button>
+                                                </button></a>
                                         </div>
                                     </div>
                                 </div>
