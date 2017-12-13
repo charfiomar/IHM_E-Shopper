@@ -141,34 +141,57 @@ if(!isset($_SESSION['username']))
 
                 <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
+                        <?php
+                            $i = 0;
+                            foreach($recom as $a):
+                                $phot = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn =$a->idAnn ")->fetch(PDO::FETCH_OBJ);
+                        ?>
                         <div class="item active">
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="images/home/recommend1.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <img src="images/annonces/<?=$phot->nomPh;?>" alt="" style="height: 150px;"/>
+                                            <h2>$<?=$a->prixAnn?></h2>
+                                            <p><?=$a->titreAnn?></p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i
+                                                class="fa fa-shopping-cart"></i>See details
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php   $i=$i+1;
+                                if(i==3){break;}
+                            endforeach; ?>
+                        <?php
+                            $i = 0;
+                            foreach($recom as $a):
+                                if(i==3 && i<6):
+                                    $phot = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn =$a->idAnn ")->fetch(PDO::FETCH_OBJ);
+                        ?>
                         <div class="item">
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="images/home/recommend3.jpg" alt="" />
-                                            <h2>$56</h2>
-                                            <p>Easy Polo Black Edition</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                            <img src="images/annonces/<?=$phot->nomPh;?>" alt=""/>
+                                            <h2>$<?=$a->prixAnn?></h2>
+                                            <p><?=$a->titreAnn?></p>
+                                            <button type="button" class="btn btn-default add-to-cart"><i
+                                                class="fa fa-shopping-cart"></i>See details
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <?php
+                                endif;
+                            $i = $i + 1;
+                        endforeach;
+                        ?>
                     </div>
                     <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
                         <i class="fa fa-angle-left"></i>

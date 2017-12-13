@@ -57,6 +57,7 @@ switch ($action){
     case 'consult':
         $anId=$_REQUEST['id'];
         $ann = $bdd->query("SELECT * FROM annonce WHERE idAnn = $anId")->fetch(PDO::FETCH_OBJ);
+        $recom = $bdd->query("SELECT * FROM annonce WHERE idCat = $ann->idCat")->fetchAll(PDO::FETCH_OBJ);
         $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn =$anId ")->fetch(PDO::FETCH_OBJ);
         $usrnm = $bdd->query("SELECT loginUsr FROM utilisateur WHERE idUsr =$ann->idUsr ")->fetch(PDO::FETCH_OBJ);
         include "Views/Annonce/ViewAnnonce.php";
