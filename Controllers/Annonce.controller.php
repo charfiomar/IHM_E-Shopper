@@ -63,4 +63,11 @@ switch ($action){
         include "Views/Annonce/ViewAnnonce.php";
         header('location:index.php?controller=Annonce&action=list');
         break;
+    case 'enchere':
+        $ia = $_REQUEST['A1'];
+        $pa = $_REQUEST['A2'];
+        $ua = $_REQUEST['A3'];
+        $bid = $_REQUEST['bid'];
+        include "Includes/encherir.php";
+        break;
 }

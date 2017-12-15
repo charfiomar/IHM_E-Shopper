@@ -131,22 +131,25 @@ if(!isset($_SESSION['username']))
                         <img src="images/product-details/bid.png" class="newarrival" alt="" />
                         <h2><?=$ann->titreAnn?></h2>
                         <p><?=$ann->descriptionAnn?></p>
-                        <span>
+                        <form method="post" action="index.php?controller=Annonce&action=enchere">
+                            <span>
 							<span style="font-size: small">Current BID :</span>
                             <span>US $<?=$ann->prixAnn?></span>
                             <span style="font-size: medium;color: #595959">Min. bid amount : $<?=$ann->unitAnn?> (5% of initial price)</span>
-                                <span style="font-size: xx-large">Your BID : $<input type="number" value="<?=$ann->unitAnn+$ann->prixAnn?>" min="<?=$ann->unitAnn+$ann->prixAnn?>" style="width: 25%;height: 80%"></span>
-                                <a href="index.php?controller=Annonce&action=consult&id=<?=$ann->idAnn?>&bid=true">
-                                        <button type="button" class="btn btn-fefault cart btn-group-justified">
+                                <span style="font-size: xx-large">Your BID : $<input name="bid" type="number" value="<?=$ann->unitAnn+$ann->prixAnn?>" min="<?=$ann->unitAnn+$ann->prixAnn?>" style="width: 25%;height: 80%" step="any"></span>
+                                    <button type="submit" class="btn btn-fefault cart btn-group-justified">
 										<i class="fa fa-shopping-cart"></i>
 										BID
-                                        </button>
-                                    </a>
+                                    </button>
                             <button type="button" class="btn btn-fefault cart btn-group-justified">
 										<i class="fa fa-shopping-cart"></i>
 										VIEW BIDS HISTORY
-									</button>
-								</span>
+							</button>
+						</span>
+                            <input name="A1" type="hidden" value="<?=$ann->idAnn?>">
+                            <input name="A2" type="hidden" value="<?=$ann->prixAnn?>">
+                            <input name="A3" type="hidden" value="<?=$ann->unitAnn?>">
+                        </form>
                         <p><b>Availability:</b> <?=substr($ann->dateExpAnn,0,10)?></p>
                         <p><b>Condition:</b> <?=$ann->etatAnn?></p>
                         <p><b>Announcer:</b> <?=$usrnm->loginUsr?></p>
