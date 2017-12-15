@@ -30,31 +30,6 @@ if(isset($_SESSION['username']))
 
 <body>
 <header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-phone"></i> +216 53 526 592</a></li>
-                            <li><a href=""><i class="fa fa-envelope"></i> contact@iit.ens.tn</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -109,11 +84,16 @@ if(isset($_SESSION['username']))
     </div>
 </section><!--/form-->
 
+<footer class="container-fluid text-center bg-lightgray">
 
-<footer id="footer"><!--Footer-->
-</footer><!--/Footer-->
-
-
+    <div class="copyrights" style="margin-top:25px;">
+        <br>
+        <p>IHM IIT © 2017, All Rights Reserved
+            <br>
+            <span>Template modification by : IHM IIT Team</span></p>
+        <p><a href="https://github.com/charfiomar/IHM_E-Shopper">GitHub REPO <i class="fa fa-github-square" aria-hidden="true"></i> </a></p>
+    </div>
+</footer>
 
 <script src="js/jquery.js"></script>
 <script src="js/price-range.js"></script>

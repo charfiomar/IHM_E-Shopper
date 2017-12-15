@@ -54,27 +54,34 @@ if(!isset($_SESSION['username']))
         </div>
     </div><!--/header-middle-->
 
-    <div class="header-bottom"><!--header-bottom-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
+    <div class="container"><!--SearchBar-->
+        <div class="row">
+            <nav class="navbar navbar-default">
+                <div class="nav nav-justified navbar-nav">
+                    <form class="navbar-form navbar-search" role="search">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-search btn-default" disabled>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <span class="label-icon">Search</span>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-search btn-default">
+                                    GO
+                                </button>
+                                <button type="button" class="btn btn-search btn-default">
+                                    Advanced
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-sm-3">
-                    <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
-                    </div>
-                </div>
-            </div>
+            </nav>
         </div>
-    </div>
+    </div><!--/SearchBar-->
+
 </header>
 
 <section id="advertisement">
