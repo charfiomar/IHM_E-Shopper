@@ -30,32 +30,6 @@ if(!isset($_SESSION['username']))
 
 <body>
 <header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 ">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-phone"></i> +216 53 526 592</a></li>
-                            <li><a href=""><i class="fa fa-envelope"></i> contact@iit.ens.tn</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
-
     <div class="header-middle"><!--header-middle-->
         <div class="container">
             <div class="row">
@@ -77,10 +51,10 @@ if(!isset($_SESSION['username']))
         </div>
     </div><!--/header-middle-->
 
-    <div class="header-bottom"><!--header-bottom-->
+    <div class="header-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-sm-9">
+                <!--<div class="col-sm-9">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -89,15 +63,15 @@ if(!isset($_SESSION['username']))
                             <span class="icon-bar"></span>
                         </button>
                     </div>
-                </div>
+                </div>-->
                 <div class="col-sm-3">
-                    <div class="search_box pull-right">
+                    <div class="search_box">
                         <input type="text" placeholder="Search"/>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
 </header>
 
 <section id="advertisement">
@@ -201,15 +175,31 @@ if(!isset($_SESSION['username']))
 </section>
 
 <footer id="footer"><!--Footer-->
-
-    <div class="footer-bottom">
+    <div class="header_top"><!--header_top-->
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-Shopper. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                <div class="col-sm-6 ">
+                    <div class="contactinfo">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-phone"></i> +216 53 526 592</a></li>
+                            <li><a href=""><i class="fa fa-envelope"></i> contact@iit.ens.tn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="social-icons pull-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </div><!--/header_top-->
 
 </footer><!--/Footer-->
 

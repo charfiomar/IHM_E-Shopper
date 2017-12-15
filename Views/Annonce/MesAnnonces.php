@@ -30,31 +30,6 @@ if(!isset($_SESSION['username']))
 
 <body>
 <header id="header"><!--header-->
-    <div class="header_top"><!--header_top-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 ">
-                    <div class="contactinfo">
-                        <ul class="nav nav-pills">
-                            <li><a href=""><i class="fa fa-phone"></i> +216 53 526 592</a></li>
-                            <li><a href=""><i class="fa fa-envelope"></i> contact@iit.ens.tn</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="social-icons pull-right">
-                        <ul class="nav navbar-nav">
-                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!--/header_top-->
 
     <div class="header-middle"><!--header-middle-->
         <div class="container">
@@ -137,13 +112,13 @@ if(!isset($_SESSION['username']))
                                     <img src="images/annonces/<?=$pho->nomPh;?>" style="height: 200px"/>
                                     <h2>$<?=$annonce->prixAnn?></h2>
                                     <p><?=$annonce->titreAnn?></p>
-                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
+                                    <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
                                 </div>
                                 <div class="product-overlay" title="<?=$pho->descPh;?>">
                                     <div class="overlay-content">
                                         <h2>$<?=$annonce->prixAnn?></h2>
                                         <p><?=$annonce->titreAnn?></p>
-                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
+                                        <a href="index.php?controller=Annonce&action=consult&id=<?=$annonce->idAnn?>" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>See details</a>
                                     </div>
                                 </div>
                             </div>
@@ -172,16 +147,31 @@ if(!isset($_SESSION['username']))
 </section>
 
 <footer id="footer"><!--Footer-->
-
-    <div class="footer-bottom">
+    <div class="header_top"><!--header_top-->
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-Shopper. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                <div class="col-sm-6 ">
+                    <div class="contactinfo">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-phone"></i> +216 53 526 592</a></li>
+                            <li><a href=""><i class="fa fa-envelope"></i> contact@iit.ens.tn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="social-icons pull-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
+    </div><!--/header_top-->
 </footer><!--/Footer-->
 
 
