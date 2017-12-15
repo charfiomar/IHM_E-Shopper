@@ -114,10 +114,12 @@ if(!isset($_SESSION['username']))
                                         </button>
                                     </a>
                                     <?php endif;?>
-                                    <button type="button" class="btn btn-fefault cart btn-group-justified">
+                            <a href="index.php?controller=Annonce&action=bidHist&id=<?php echo $ann->idAnn;?>">
+                                <button type="button" class="btn btn-fefault cart btn-group-justified">
 										<i class="fa fa-shopping-cart"></i>
 										VIEW BIDS HISTORY
-									</button>
+							</button>
+                            </a>
 								</span>
                         <p><b>Availability:</b> <?=substr($ann->dateExpAnn,0,10)?></p>
                         <p><b>Condition:</b> <?=$ann->etatAnn?></p>
@@ -141,10 +143,12 @@ if(!isset($_SESSION['username']))
 										<i class="fa fa-shopping-cart"></i>
 										BID
                                     </button>
-                            <button type="button" class="btn btn-fefault cart btn-group-justified">
+                            <a href="index.php?controller=Annonce&action=bidHist&id=<?php echo $ann->idAnn;?>">
+                                <button type="button" class="btn btn-fefault cart btn-group-justified">
 										<i class="fa fa-shopping-cart"></i>
 										VIEW BIDS HISTORY
 							</button>
+                            </a>
 						</span>
                             <input name="A1" type="hidden" value="<?=$ann->idAnn?>">
                             <input name="A2" type="hidden" value="<?=$ann->prixAnn?>">

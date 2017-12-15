@@ -70,4 +70,10 @@ switch ($action){
         $bid = $_REQUEST['bid'];
         include "Includes/encherir.php";
         break;
+    case 'bidHist':
+        $anId=$_REQUEST['id'];
+        $enchs = $bdd->query("SELECT * FROM enchere WHERE idAnn =$anId ORDER BY sommeEn DESC ")->fetchAll(PDO::FETCH_OBJ);
+        $pho = $bdd->query("SELECT nomPh,descPh FROM photo WHERE idAnn =$anId ")->fetch(PDO::FETCH_OBJ);
+        include "Views/Annonce/BiddingHistory.php";
+        break;
 }
