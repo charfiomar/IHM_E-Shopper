@@ -1,4 +1,3 @@
-# IHM_E-Shopper
 #//Fichier README.TXT
 #MINI PROJET IHM : E_SHOPPER
 #REPO GITHUB : https://github.com/charfiomar/IHM_E-Shopper

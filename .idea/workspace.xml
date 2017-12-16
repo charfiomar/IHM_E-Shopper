@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e4bddd5-1d83-4d18-8017-6bacbba161a4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Annonce/AddAnnonce.php" afterPath="$PROJECT_DIR$/Views/Annonce/AddAnnonce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Annonce/BiddingHistory.php" afterPath="$PROJECT_DIR$/Views/Annonce/BiddingHistory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Annonce/MesAnnonces.php" afterPath="$PROJECT_DIR$/Views/Annonce/MesAnnonces.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php" afterPath="$PROJECT_DIR$/Views/Annonce/ViewAnnonce.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" afterPath="$PROJECT_DIR$/Views/Utilisateur/Acceuil.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Views/login.php" afterPath="$PROJECT_DIR$/Views/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-    </list>
+    <list default="true" id="5e4bddd5-1d83-4d18-8017-6bacbba161a4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -258,12 +249,12 @@
       <workItem from="1513297598677" duration="948000" />
       <workItem from="1513339718573" duration="2300000" />
       <workItem from="1513344117138" duration="9424000" />
-      <workItem from="1513365356024" duration="5499000" />
+      <workItem from="1513365356024" duration="5571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134533000" />
+    <option name="totallyTimeSpent" value="134605000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="106" y="-4" width="1368" height="780" extended-state="6" />
